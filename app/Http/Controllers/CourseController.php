@@ -23,9 +23,9 @@ class CourseController extends Controller
         $user = User::where('id', Auth::id())->first();
         $totaluser=User::where("role","student")->count();
         $course = Course::with('user')->findOrFail($id);
-        // $lessons = $course->lessons;
+        $lessons = $course->lessons;
 
-        return view('course', compact('course', 'user','totaluser'));
+        return view('course', compact('course', 'user','totaluser','lessons'));
     }
     public function score()
     {
@@ -190,10 +190,11 @@ class CourseController extends Controller
      */
     public function show(Course $course)
     {
+        $course = Course::with(['lessons'])->findOrFail($course);
         $lessons = $course->lessons()->orderBy('created_at')->get();
         $hasCompletedAllLessons = auth()->user()->hasCompletedAllLessons($course);
         
-        return view('course', compact('course', 'lessons', 'hasCompletedAllLessons'));
+        return view('course', compact('course', 'lessons', 'hasCompletedAllLessons','course'));
     }
   
 

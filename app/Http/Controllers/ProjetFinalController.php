@@ -17,7 +17,7 @@ class ProjetFinalController extends Controller
 
     public function start(ProjetFinal $course)
     {
-        $course = Course::with(['lessons'])->findOrFail($course);
+       
         
         $finalProject = ProjetFinal::firstOrFail();
 
