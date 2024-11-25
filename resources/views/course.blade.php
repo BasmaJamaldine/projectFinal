@@ -1,5 +1,5 @@
 <x-app-layout>
-    <div class=" w-[70vw] m-auto ">
+    <div class=" mt-15 w-[70vw] m-auto ">
 
         <div class=" m-auto sm:px-6 lg:px-8">
          

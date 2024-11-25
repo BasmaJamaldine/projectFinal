@@ -50,13 +50,24 @@ class LessonController extends Controller
         $lesson = Lesson::findOrFail($id);
         
         if (!$lesson->isAccessible()) {
-            return back();
+            return back()->with('error', 'You need to complete previous lessons first.');
         }
 
         $lesson->users()->syncWithoutDetaching([
             Auth::id() => ['completed' => true]
         ]);
+
+        $previousLesson = Lesson::where('course_id', $lesson->course_id)
+                               ->where('order', '<', $lesson->order)
+                               ->orderBy('order', 'desc')
+                               ->first();
+
+        $nextLesson = Lesson::where('course_id', $lesson->course_id)
+                           ->where('order', '>', $lesson->order)
+                           ->orderBy('order', 'asc')
+                           ->first();
         
-        return view('lessonShow', compact('lesson'));
+        return view('lessonShow', compact('lesson', 'previousLesson', 'nextLesson'));
     }
+
 }
