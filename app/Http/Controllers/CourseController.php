@@ -37,9 +37,7 @@ class CourseController extends Controller
         return view('dashboard', compact('courses'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
+
     public function create()
     {
         //

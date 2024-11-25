@@ -14,12 +14,10 @@
                         </a>
                     </div>
 
-                    <!-- Lesson Title -->
                     <h1 class="font-clash text-4xl font-semibold mb-8">
                         <span class="bg-[#f9c365] px-4 py-1 rounded-full">{{ $lesson->nameLesson }}</span>
                     </h1>
 
-                    <!-- Video Player -->
                     <div class="relative rounded-2xl overflow-hidden bg-black shadow-2xl mb-8">
                         <div class="aspect-w-16 aspect-h-9">
                             <video controls class="w-full h-full object-cover">
@@ -29,7 +27,6 @@
                         </div>
                     </div>
 
-                    <!-- Navigation Buttons -->
                     <div class="flex justify-between items-center mt-8">
                         @if($previousLesson)
                             <a href="{{ route('lesson.show', $previousLesson->id) }}" 
@@ -64,7 +61,6 @@
                 </div>
             </div>
 
-            <!-- Additional Resources Section -->
             <div class="mt-8 bg-white rounded-3xl shadow-xl p-8">
                 <h2 class="font-clash text-2xl font-semibold mb-6">Additional Resources</h2>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
