@@ -23,6 +23,7 @@ class CourseController extends Controller
         $user = User::where('id', Auth::id())->first();
         $totaluser=User::where("role","student")->count();
         $course = Course::with('user')->findOrFail($id);
+        // $lessons = $course->lessons;
 
         return view('course', compact('course', 'user','totaluser'));
     }

@@ -3,7 +3,7 @@
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="bg-white rounded-3xl shadow-xl overflow-hidden">
                 <div class="p-8">
-                    <!-- Back Navigation -->
+                 
                     <div class="mb-6">
                         <a href="{{ route('courses', $lesson->course->id) }}" 
                            class="inline-flex items-center text-gray-600 hover:text-[#f9c365] transition-colors">

@@ -13,23 +13,11 @@ use Illuminate\Support\Facades\Auth;
 class ProjetFinalController extends Controller
 {
 
-//     public function showResults($courseId)
-// {
-//     // Récupérer le cours avec l'ID passé
-//     $course = Course::findOrFail($courseId);
-    
-//     // Récupérer d'autres informations nécessaires (comme le score, les réponses, etc.)
-//     $passed = $this->checkPassStatus();
-//     $score = $this->calculateScore();
-//     $correctAnswers = $this->getCorrectAnswers();
-//     $totalQuestions = $this->getTotalQuestions();
 
-//     // Passer les données à la vue
-//     return view('results', compact('course', 'passed', 'score', 'correctAnswers', 'totalQuestions'));
-// }
 
     public function start(ProjetFinal $course)
     {
+        $course = Course::with(['lessons'])->findOrFail($course);
         
         $finalProject = ProjetFinal::firstOrFail();
 

@@ -13,7 +13,6 @@ class LessonController extends Controller
     {
         $course = Course::findOrFail($id);
         $lessons = $course->lessons()->orderBy('order')->get()->map(function ($lesson) {
-            
                 $lesson->accessible = $lesson->isAccessible();
                 $lesson->completed = $lesson->isCompletedByUser();
                 return $lesson;
@@ -48,7 +47,7 @@ class LessonController extends Controller
     public function show($id)
     {
         $lesson = Lesson::findOrFail($id);
-        
+      
         if (!$lesson->isAccessible()) {
             return back()->with('error', 'You need to complete previous lessons first.');
         }
