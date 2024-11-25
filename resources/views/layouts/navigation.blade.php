@@ -47,6 +47,7 @@
                         </div>
 
                         <div class="mt-4">
+
                             @can('admin')
                                 <div class="flex flex-row gap-3">
                                     <div>
@@ -79,7 +80,18 @@
                                     {{ __('Calendrier') }}
                                 </x-nav-link>
                             </div>
-                          
+                        </div>
+                        {{-- <div class="mt-8">
+                            <h1>Mentor</h1>
+                    
+                            @foreach ($users as $user)
+                            @if (Auth::user()->role === 'coach')
+                                
+                            @endif
+                                <p>{{ $user->name }}</p>
+                            @endforeach
+                       
+                        </div> --}}
 
                     </nav>
 

@@ -2,10 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Course;
 use App\Models\ProjetFinal;
 use App\Models\QuesProjetF;
-use App\Models\QuestionProjetFinal;
 use App\Models\StudentProjetF;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -64,6 +62,16 @@ class ProjetFinalController extends Controller
             'correctAnswers' => $correctAnswers, 
             'totalQuestions' => $totalQuestions, 
             // 'course' => $course,
+        ]);
+    }
+    public function passedUsers(ProjetFinal $finalProject)
+    {
+        $passedUsers = StudentProjetF::where('final_project_id', $finalProject->id)->where('passed', true)->with('user')
+            ->orderBy('updated_at', 'desc')->get();
+
+        return view('joindCourses', [
+            'finalProject' => $finalProject,
+            'passedUsers' => $passedUsers,
         ]);
     }
     

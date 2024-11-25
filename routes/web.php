@@ -43,6 +43,7 @@ Route::middleware('auth')->group(function () {
 
 
     Route::get('/joinCourseUser',[CourseController::class, 'joindCourses'])->name('mycourse');
+    Route::get('/mentor',[CourseController::class, 'mentor'])->name('mentor');
    
     // Route Stripe Coach and Course
     Route::get('/payment-success', [StripeController::class, 'paymentSuccess'])->name('coach.success');
@@ -71,9 +72,12 @@ Route::middleware('auth')->group(function () {
     Route::get('/courses/payment/cancel', [CourseController::class, 'paymentCancel'])->name('courses.payment.cancel');
     Route::post("/course/filter/", [CourseController::class, "filterCourses"])->name("course.filter");
     Route::get("/calendrier", [CourseController::class, "create"])->name("calendriershow");
-    Route::get('courses/{course}/start-final-project', [ProjetFinalController::class, 'start'])->name('final-project.start');
 
+    // Route project final
+    Route::get('courses/{course}/start-final-project', [ProjetFinalController::class, 'start'])->name('final-project.start');
     Route::post('/projetfinal/{finalProject}/submit', [ProjetFinalController::class, 'submit'])->name('projetfinal.submit');
+    Route::get('/final-project/{finalProject}/passed-users', [ProjetFinalController::class, 'passedUsers'])
+    ->name('final-project.passed-users');
 
    
 });
