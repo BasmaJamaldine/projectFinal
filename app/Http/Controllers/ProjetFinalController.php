@@ -17,8 +17,7 @@ class ProjetFinalController extends Controller
 
     public function start(ProjetFinal $course)
     {
-       
-        
+
         $finalProject = ProjetFinal::firstOrFail();
 
         $questions = QuesProjetF::where('projet_final_id', $finalProject->id)->get();
