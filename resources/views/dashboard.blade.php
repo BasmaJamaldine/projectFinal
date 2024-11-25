@@ -426,11 +426,10 @@
                                         <h3 class="text-xl font-clash font-semibold mb-4">{{ $course->name }}</h3>
 
                                         <div class="flex items-center gap-3 mb-4">
-                                            <div class="w-8 h-8 rounded-full overflow-hidden bg-gray-100">
-                                                <img src="{{ asset('storage/' . $course->user->avatar) }}"
+                                            <div class="w-10 h-10 rounded-full overflow-hidden bg-gray-100">
+                                                <img src="{{ asset('storage/' . $course->user->profile_image) }}"
                                                     alt="{{ $course->user->name }}"
-                                                    class="w-full h-full object-cover"
-                                                    onerror="this.src='https://ui-avatars.com/api/?name={{ urlencode($course->user->name) }}'">
+                                                    class="w-full h-full object-cover">
                                             </div>
                                             <div>
                                                 <p class="text-sm font-medium text-gray-900">{{ $course->user->name }}
@@ -528,4 +527,5 @@
 
 
     </div>
+    
 </x-app-layout>

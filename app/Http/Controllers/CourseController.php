@@ -27,6 +27,14 @@ class CourseController extends Controller
 
         return view('course', compact('course', 'user','totaluser','lessons'));
     }
+    public function joindCourses()
+    {
+        // Get the authenticated user's enrolled courses with their progress
+        $enrolledCourses = Auth::user()->courses()
+            ->with('user')->get();
+
+        return view('joindCourses', compact('enrolledCourses'));
+    }
     public function score()
     {
         $user = auth()->user();

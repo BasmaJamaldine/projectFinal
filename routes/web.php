@@ -42,6 +42,7 @@ Route::middleware('auth')->group(function () {
 
 
 
+    Route::get('/joinCourseUser',[CourseController::class, 'joindCourses'])->name('mycourse');
    
     // Route Stripe Coach and Course
     Route::get('/payment-success', [StripeController::class, 'paymentSuccess'])->name('coach.success');
