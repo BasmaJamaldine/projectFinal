@@ -72,6 +72,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/courses/payment/cancel', [CourseController::class, 'paymentCancel'])->name('courses.payment.cancel');
     Route::post("/course/filter/", [CourseController::class, "filterCourses"])->name("course.filter");
     Route::get("/calendrier", [CourseController::class, "create"])->name("calendriershow");
+    Route::get("/allcourses", [CourseController::class, "allcourses"])->name("allcourses");
 
     // Route project final
     Route::get('courses/{course}/start-final-project', [ProjetFinalController::class, 'start'])->name('final-project.start');

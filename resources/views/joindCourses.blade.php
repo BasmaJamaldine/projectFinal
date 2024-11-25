@@ -6,9 +6,10 @@
         <div class="bg-[#d4c59a] w-[50vw] h-[10vw] pt-6 pl-4 m-auto rounded-3xl flex flex-row items-center gap-5 mb-12">
             <div>
                 <p class="font-serif text-white text-xl mb-3">MY COURSES</p>
-                <h1 class="font-medium font-clash text-white text-3xl ">
-                    Hello, <span class="">{{ auth()->user()->name }}!</span>
-                </h1>
+                <div>
+                    <h1 class="text-2xl font-bold dark:text-gray-100">Hello, {{ auth()->user()->name }}👋</h1>
+                    <p class="text-xl text-gray-500 dark:text-gray-400">{{ \Carbon\Carbon::now()->isoFormat('dddd, MMMM D, YYYY') }}</p>
+                </div>
             
             </div>
         </div>
@@ -90,5 +91,6 @@
             @endif
         </div>
     </div>
+ 
     </div>
 </x-app-layout>

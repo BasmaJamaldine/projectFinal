@@ -39,40 +39,43 @@
                         </div>
                         <div class="flex flex-row gap-3 mt-4">
                             <div class="w-6">
-                                <svg fill="#fac365" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 256 190" enable-background="new 0 0 256 190" xml:space="preserve" stroke="#fac365"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M48.12,27.903C48.12,13.564,59.592,2,74.023,2c14.339,0,25.903,11.564,25.903,25.903 C99.834,42.335,88.27,53.806,74.023,53.806C59.684,53.806,48.12,42.242,48.12,27.903z M191,139h-47V97c0-20.461-17.881-37-38-37H43 C20.912,60,1.99,79.14,2,98v77c-0.026,8.533,6.001,12.989,12,13c6.014,0.011,12-4.445,12-13v-75h8v88h78v-88h8l0.081,50.37 c-0.053,8.729,5.342,12.446,10.919,12.63h60C207.363,163,207.363,139,191,139z M168.711,120.755c16.993,0,25.774,2.739,29.553,4.418 H157V72.326h6.627v48.456l4.105-0.027H168.711z M203.22,73.855c0,8.156,0,49.448,0,49.448s-7.626-6.627-34.495-6.627h-1.02 c0-7.817,0-49.788,0-49.788s1.529-0.061,3.949-0.061h0.007C179.981,66.827,198.883,67.541,203.22,73.855z M243.268,120.755 l4.105,0.027V72.326H254v52.847h-41.265c3.779-1.679,12.561-4.418,29.553-4.418H243.268z M239.339,66.827h0.007 c2.42,0,3.949,0.061,3.949,0.061s0,41.971,0,49.788h-1.02c-26.869,0-34.495,6.627-34.495,6.627s0-41.292,0-49.448 C212.117,67.541,231.019,66.827,239.339,66.827z"></path> </g></svg>
+                                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M4 19V6.2C4 5.0799 4 4.51984 4.21799 4.09202C4.40973 3.71569 4.71569 3.40973 5.09202 3.21799C5.51984 3 6.0799 3 7.2 3H16.8C17.9201 3 18.4802 3 18.908 3.21799C19.2843 3.40973 19.5903 3.71569 19.782 4.09202C20 4.51984 20 5.0799 20 6.2V17H6C4.89543 17 4 17.8954 4 19ZM4 19C4 20.1046 4.89543 21 6 21H20M9 7H15M9 11H15M19 17V21" stroke="#f9c365" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
                             </div>
                             <x-nav-link :href="route('mycourse')" :active="request()->routeIs('Courses')" class="text-lg  hover:text-[#fac365] hover:bg-[#1d1d1d] hover:font-bold hover:px-3 hover:rounded-e-full">
-                                {{ __('Courses') }}
+                                {{ __('My Courses') }}
+                            </x-nav-link>
+                        </div>
+                        <div class="flex flex-row gap-3 mt-4">
+                            <div class="w-6">
+                                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M4 19V6.2C4 5.0799 4 4.51984 4.21799 4.09202C4.40973 3.71569 4.71569 3.40973 5.09202 3.21799C5.51984 3 6.0799 3 7.2 3H16.8C17.9201 3 18.4802 3 18.908 3.21799C19.2843 3.40973 19.5903 3.71569 19.782 4.09202C20 4.51984 20 5.0799 20 6.2V17H6C4.89543 17 4 17.8954 4 19ZM4 19C4 20.1046 4.89543 21 6 21H20M9 7H15M9 11H15M19 17V21" stroke="#f9c365" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
+                            </div>
+                            <x-nav-link :href="route('allcourses')" :active="request()->routeIs('allcourses')" class="text-lg  hover:text-[#fac365] hover:bg-[#1d1d1d] hover:font-bold hover:px-3 hover:rounded-e-full">
+                                {{ __(' Courses') }}
                             </x-nav-link>
                         </div>
 
                         <div class="mt-4">
 
                             @can('admin')
-                                <div class="flex flex-row gap-3">
-                                    <div>
-                                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                                            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round">
-                                            </g>
-                                            <g id="SVGRepo_iconCarrier">
-                                                <path
-                                                    d="M7 10H17M7 14H12M7 3V5M17 3V5M6.2 21H17.8C18.9201 21 19.4802 21 19.908 20.782C20.2843 20.5903 20.5903 20.2843 20.782 19.908C21 19.4802 21 18.9201 21 17.8V8.2C21 7.07989 21 6.51984 20.782 6.09202C20.5903 5.71569 20.2843 5.40973 19.908 5.21799C19.4802 5 18.9201 5 17.8 5H6.2C5.0799 5 4.51984 5 4.09202 5.21799C3.71569 5.40973 3.40973 5.71569 3.21799 6.09202C3 6.51984 3 7.07989 3 8.2V17.8C3 18.9201 3 19.4802 3.21799 19.908C3.40973 20.2843 3.71569 20.5903 4.09202 20.782C4.51984 21 5.07989 21 6.2 21Z"
-                                                    stroke="#fbd479" stroke-width="2" stroke-linecap="round"
-                                                    stroke-linejoin="round"></path>
-                                            </g>
-                                        </svg>
-                                    </div>
-                                    <x-nav-link :href="route('allUsers')" :active="request()->routeIs('dashboard')">
-                                        {{ __('User') }}
-                                    </x-nav-link>
+                            <div class="flex flex-row gap-3 mt-4">
+                                <div class="w-6">
+                                    <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M8 7C9.65685 7 11 5.65685 11 4C11 2.34315 9.65685 1 8 1C6.34315 1 5 2.34315 5 4C5 5.65685 6.34315 7 8 7Z" fill="#f9c365"></path> <path d="M14 12C14 10.3431 12.6569 9 11 9H5C3.34315 9 2 10.3431 2 12V15H14V12Z" fill="#f9c365"></path> </g></svg>
                                 </div>
-
-                                <x-nav-link :href="route('admin.role')" :active="request()->routeIs('dashboard')" class="text-lg  hover:text-[#fac365] hover:bg-[#1d1d1d] hover:font-bold hover:px-3 hover:rounded-e-full">
-                                    {{ __('Demande Coach') }}
+                                <x-nav-link :href="route('allUsers')" :active="request()->routeIs('Courses')" class="text-lg  hover:text-[#fac365] hover:bg-[#1d1d1d] hover:font-bold hover:px-3 hover:rounded-e-full">
+                                    {{ __('User') }}
                                 </x-nav-link>
+                            </div>
+                            <div class="flex flex-row gap-3 mt-4">
+                                <div class="w-6">
+                                    <svg fill="#fac365" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 256 190" enable-background="new 0 0 256 190" xml:space="preserve" stroke="#fac365"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M48.12,27.903C48.12,13.564,59.592,2,74.023,2c14.339,0,25.903,11.564,25.903,25.903 C99.834,42.335,88.27,53.806,74.023,53.806C59.684,53.806,48.12,42.242,48.12,27.903z M191,139h-47V97c0-20.461-17.881-37-38-37H43 C20.912,60,1.99,79.14,2,98v77c-0.026,8.533,6.001,12.989,12,13c6.014,0.011,12-4.445,12-13v-75h8v88h78v-88h8l0.081,50.37 c-0.053,8.729,5.342,12.446,10.919,12.63h60C207.363,163,207.363,139,191,139z M168.711,120.755c16.993,0,25.774,2.739,29.553,4.418 H157V72.326h6.627v48.456l4.105-0.027H168.711z M203.22,73.855c0,8.156,0,49.448,0,49.448s-7.626-6.627-34.495-6.627h-1.02 c0-7.817,0-49.788,0-49.788s1.529-0.061,3.949-0.061h0.007C179.981,66.827,198.883,67.541,203.22,73.855z M243.268,120.755 l4.105,0.027V72.326H254v52.847h-41.265c3.779-1.679,12.561-4.418,29.553-4.418H243.268z M239.339,66.827h0.007 c2.42,0,3.949,0.061,3.949,0.061s0,41.971,0,49.788h-1.02c-26.869,0-34.495,6.627-34.495,6.627s0-41.292,0-49.448 C212.117,67.541,231.019,66.827,239.339,66.827z"></path> </g></svg>
+                                </div>
+                                <x-nav-link :href="route('admin.role')" :active="request()->routeIs('Courses')" class="text-lg  hover:text-[#fac365] hover:bg-[#1d1d1d] hover:font-bold hover:px-3 hover:rounded-e-full">
+                                    {{ __('Coach') }}
+                                </x-nav-link>
+                            </div>
                             @endcan
-                            <div class="flex flex-row gap-3">
+    
+                            <div class="flex flex-row gap-3 mt-4">
                                 <div class="w-6">
                                     <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M7 10H17M7 14H12M7 3V5M17 3V5M6.2 21H17.8C18.9201 21 19.4802 21 19.908 20.782C20.2843 20.5903 20.5903 20.2843 20.782 19.908C21 19.4802 21 18.9201 21 17.8V8.2C21 7.07989 21 6.51984 20.782 6.09202C20.5903 5.71569 20.2843 5.40973 19.908 5.21799C19.4802 5 18.9201 5 17.8 5H6.2C5.0799 5 4.51984 5 4.09202 5.21799C3.71569 5.40973 3.40973 5.71569 3.21799 6.09202C3 6.51984 3 7.07989 3 8.2V17.8C3 18.9201 3 19.4802 3.21799 19.908C3.40973 20.2843 3.71569 20.5903 4.09202 20.782C4.51984 21 5.07989 21 6.2 21Z" stroke="#fbd479" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
                                 </div>

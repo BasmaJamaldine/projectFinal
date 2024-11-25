@@ -27,6 +27,12 @@ class CourseController extends Controller
 
         return view('course', compact('course', 'user','totaluser','lessons'));
     }
+    public function allcourses(){
+        $courses=Course::all();
+        $users = User::all();
+        $user = User::where('id', Auth::id())->first();
+        return view('allcourses',compact('courses','users','user'));
+    }
     public function joindCourses()
     {
         // Get the authenticated user's enrolled courses with their progress

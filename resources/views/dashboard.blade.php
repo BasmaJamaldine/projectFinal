@@ -20,7 +20,6 @@
            @if (Auth::user()->role == ('admin'))
            <div class="w-[49vw] mx-auto py-6">
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <!-- Total Courses Card -->
                 <div class="bg-white rounded-2xl shadow-lg overflow-hidden transform hover:scale-102 transition-all duration-300">
                     <div class="p-4">
                         <div class="flex items-center justify-between mb-3">
@@ -169,11 +168,13 @@
                         </div>
                         @endif
                         @if (Auth::user()->role === 'coach')
+                         <div class="flex-col">
                             <button type="button" id="submitEvent"
-                                class="inline-flex items-center px-6 py-2.5 hover:bg-[#1d1d1d] border border-transparent rounded-full font-clash font-medium text-sm hover:text-[#f9c365] uppercase tracking-wider bg-[#f9c365] text-[#1d1d1d] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#f9c365] transition-colors duration-200"
-                                data-bs-toggle="modal" data-bs-target="#exampleModal1">
-                                Créer course
-                            </button>
+                            class=" block items-center px-6 py-2.5 hover:bg-[#1d1d1d] border border-transparent rounded-full font-clash font-medium text-sm hover:text-[#f9c365] uppercase tracking-wider bg-[#f9c365] text-[#1d1d1d] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#f9c365] transition-colors duration-200"
+                            data-bs-toggle="modal" data-bs-target="#exampleModal1">
+                            Créer course
+                        </button>
+                         </div>
 
                             <div class="w-full h-[90vh] bg-white rounded-3xl border-none p-3" id="calendar"></div>
                             {{-- calendrier --}}
@@ -293,7 +294,7 @@
                                 })
                             </script>
 
-
+{{-- modal course create --}}
 <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content bg-white rounded-3xl shadow-2xl">
@@ -395,7 +396,9 @@
     </div>
 </div>
                         @endif
-                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 m-auto pb-10 mt-10 justify-center w-[70vw]">
+                        {{-- Course --}}
+                       @if (Auth::user()->role == 'student')
+                     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 m-auto pb-10 mt-10 justify-center w-[70vw]">
                             @foreach ($courses->reverse()->sortByDesc('score') as $course)
                                 <div
                                     class="group bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 w-full justify-center items-center">
@@ -516,8 +519,11 @@
                                     </div>
                                 </div>
                             @endforeach
+                        </div>         
                         </div>
-                    </div>
+                      
+                    </div>  
+                    @endif
                 </div>
             </div>
         </div>

@@ -33,6 +33,10 @@ class Course extends Model
     {
         return $this->belongsToMany(User::class, 'Course_Users')->withTimestamps();
     }
+    public function coach()
+{
+    return $this->belongsTo(User::class, 'coach_id'); 
+}
 
     public function isFull()
     {

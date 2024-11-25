@@ -38,6 +38,10 @@ class User extends Authenticatable
         return $this->belongsToMany(Course::class, 'Course_Users')->withTimestamps();;
     }
     
+    public function coachedCourses()
+{
+    return $this->hasMany(Course::class, 'coach_id');
+}
     
     public function lessons()
 {
