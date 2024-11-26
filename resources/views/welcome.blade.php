@@ -22,7 +22,10 @@
                     <a href="">Blog</a>
                     <a href="">Course</a>
                 </div>
-                <div>logo</div>
+                <div class="col-span-1 ps-5">
+                
+                    <img src="{{ asset('images/logo1.png') }}" alt="Logo" class="w-12 ">
+                </div>
 
                 <div class="space-x-5 text-black pe-5 " x-data="{ hover: '' }">
                     @if (Route::has('login'))
