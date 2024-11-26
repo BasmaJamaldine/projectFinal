@@ -37,7 +37,7 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
     // Route Register
-    Route::get('/user', [AuthenticatedSessionController::class, 'index'])->name('allUsers')->middleware('role');
+    Route::get('/user', [AuthenticatedSessionController::class, 'index'])->name('allUsers');
     Route::get('/admin/role', [AuthenticatedSessionController::class, 'index1'])->name('admin.role');
 
 
