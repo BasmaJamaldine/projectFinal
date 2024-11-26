@@ -27,17 +27,22 @@ class FinalProjectSeeder extends Seeder
     {
         $questions = [
             [
-                'question' => 'Le rôle de l\'artisan est de produire un code propre, maintenable et de qualité.',
+                'question' => 'The role of a software craftsman is to produce clean, maintainable, and quality code.',
                 'correct_answer' => 'True',
                 'incorrect_answer' => 'False',
             ],
             [
-                'question' => 'Les méthodologies agiles permettent une meilleure gestion des projets.',
+                'question' => 'Agile methodologies enable better project management.',
                 'correct_answer' => 'True',
                 'incorrect_answer' => 'False',
             ],
             [
-                'question' => 'Un objet est une classe.',
+                'question' => 'An object is a class',
+                'correct_answer' => 'False',
+                'incorrect_answer' => 'True',
+            ],
+            [
+                'question' => 'Test-Driven Development (TDD) slows down the development process.',
                 'correct_answer' => 'False',
                 'incorrect_answer' => 'True',
             ],

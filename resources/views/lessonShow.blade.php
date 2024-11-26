@@ -1,6 +1,6 @@
 <x-app-layout>
-    <div class="min-h-screen bg-[#fef7e4] py-12">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="w-[70vw] m-auto  py-12">
+        <div class="  px-4 sm:px-6 lg:px-8">
             <div class="bg-white rounded-3xl shadow-xl overflow-hidden">
                 <div class="p-8">
                  
@@ -30,7 +30,7 @@
                     <div class="flex justify-between items-center mt-8">
                         @if($previousLesson)
                             <a href="{{ route('lesson.show', $previousLesson->id) }}" 
-                               class="bg-[#1d1d1d] text-[#f9c365] px-6 py-3 rounded-full hover:bg-[#2d2d2d] transition-colors flex items-center">
+                               class="bg-[#1d1d1d] hover:text-white text-[#f9c365] px-6 py-3 rounded-full hover:bg-[#2d2d2d] transition-colors flex items-center">
                                 <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
                                 </svg>
@@ -42,7 +42,7 @@
 
                         @if($nextLesson)
                             <a href="{{ route('lesson.show', $nextLesson->id) }}" 
-                               class="bg-[#f9c365] text-[#1d1d1d] px-6 py-3 rounded-full hover:bg-[#fac365] transition-colors flex items-center">
+                               class="bg-[#f9c365] hover:text-white text-[#1d1d1d] px-6 py-3 rounded-full hover:bg-[#fac365] transition-colors flex items-center">
                                 Next Lesson
                                 <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
@@ -50,7 +50,7 @@
                             </a>
                         @else
                             <a href="{{ route('courses', $lesson->course->id) }}" 
-                               class="bg-[#f9c365] text-[#1d1d1d] px-6 py-3 rounded-full hover:bg-[#fac365] transition-colors flex items-center">
+                               class="bg-[#f9c365] hover:text-white text-[#1d1d1d] px-6 py-3 rounded-full hover:bg-[#fac365] transition-colors flex items-center">
                                 Complete Course
                                 <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>

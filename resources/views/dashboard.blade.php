@@ -97,7 +97,7 @@
                                     <button type="button"
                                         class="inline-flex items-center px-6 py-2.5 hover:bg-[#1d1d1d] border border-transparent rounded-full font-clash font-medium text-sm hover:text-[#f9c365] uppercase tracking-wider bg-[#f9c365] text-[#1d1d1d] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#f9c365] transition-colors duration-200"
                                         data-bs-toggle="modal" data-bs-target="#exampleModal">
-                                        Request to become a coach
+                                        Become a Coach
                                     </button>
                                 </div>
 
@@ -143,7 +143,7 @@
                                     <div class="modal-header border-b border-[#f9c365] p-4">
                                         <h5 class="modal-title text-xl font-clash font-medium text-[#1d1d1d]"
                                             id="exampleModalLabel">
-                                            Demande de rôle - Coach
+                                            Coach Role Request
                                         </h5>
                                         <button type="button" class="btn-close" data-bs-dismiss="modal"
                                             aria-label="Close"></button>
@@ -151,24 +151,24 @@
                                     <div class="modal-body p-6">
                                         <label for="NE"
                                             class="block text-sm font-clash font-medium text-[#1d1d1d] mb-2">
-                                            Niveau d'étude
+                                            Education Level
                                         </label>
                                         <select name="NE" id="NE"
                                             class="mt-1 block w-full px-3 py-2 text-base border-[#f9c365] focus:outline-none focus:ring-[#1d1d1d] focus:border-[#1d1d1d] rounded-xl">
-                                            <option value="bac">Bac +3</option>
-                                            <option value="bac5">Bac +5</option>
+                                            <option value="bac" selected>Bachelor's Degree (Bac +3)</option>
+                                            <option value="bac5">Master's Degree (Bac +5)</option>
                                         </select>
                                     </div>
                                     <div
                                         class="modal-footer bg-[#fef7e4] px-6 py-4 sm:flex sm:flex-row-reverse rounded-b-2xl">
                                         <button type="button"
                                             class="w-full sm:w-auto px-6 py-2.5 bg-[#f9c365] text-[#1d1d1d] rounded-full font-clash font-medium text-sm hover:bg-[#e9b74b] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#1d1d1d] transition-colors duration-200 sm:ml-3"
-                                            data-bs-dismiss="modal">Fermer</button>
+                                            data-bs-dismiss="modal">Close</button>
                                         <form action="{{ route('coach.request') }}" method="POST">
                                             @csrf
                                             <button type="submit"
                                                 class="w-full sm:w-auto mt-3 sm:mt-0 px-6 py-2.5 bg-[#1d1d1d] text-[#f9c365] rounded-full font-clash font-medium text-sm hover:bg-[#f9c365] hover:text-[#1d1d1d] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#f9c365] transition-colors duration-200">
-                                                Envoyer la demande
+                                                submit Request
                                             </button>
                                         </form>
                                     </div>

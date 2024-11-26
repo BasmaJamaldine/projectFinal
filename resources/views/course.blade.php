@@ -5,7 +5,7 @@
          
             <div class="bg-white w-[80vw] overflow-hidden shadow-xl rounded-3xl">
                 <div class="p-8 flex flex-col md:flex-row justify-between gap-12">
-                    <!-- Course Information -->
+
                     <div class="md:w-1/3">
                         <h1 class="text-3xl font-clash font-semibold text-[#fac365]">{{ $course->name }}</h1>
                         <div class="relative h-48 w-full mt-6 rounded-2xl overflow-hidden">
@@ -43,7 +43,7 @@
                         </div>
                     </div>
 
-                    <!-- Lessons Section -->
+    
                     <div class="md:w-2/3">
                         @if (Auth::user()->role === 'coach')
                             <button type="button" 
@@ -118,8 +118,6 @@
                                 </div>
                             </div>
                         @endif
-
-                        <!-- Lessons List -->
                         <div class="space-y-4">
                             @foreach ($lessons as $lesson)
                                 <div class="p-6 border-2 border-[#F4DFC8] rounded-2xl {{ $lesson->accessible ? 'bg-white' : 'bg-[#fef7e4]' }} hover:shadow-lg transition-all duration-300">
@@ -154,8 +152,6 @@
                                 </div>
                             @endforeach
                         </div>
-
-                        <!-- Final Project Section -->
                         @if(Auth::user()->hasCompletedAllLessons($course))
                             <div class="mt-8 p-6 bg-[#fef7e4] rounded-2xl border-2 border-[#fac365]">
                                 <div class="flex items-center justify-between mb-4">
@@ -169,7 +165,7 @@
                                 <p class="text-gray-600 mb-6">
                                     Congratulations! You've completed all the lessons. Test your knowledge with the final project assessment.
                                 </p>
-                                <a href="{{ route('final-project.start', ['course' => $course->id]) }}" 
+                                <a href="{{ route('finalproject.start', ['course' => $course->id]) }}" 
                                    class="inline-flex items-center px-6 py-3 bg-[#1d1d1d] text-[#fac365] rounded-full hover:bg-[#2d2d2d] transition-colors font-medium gap-2">
                                     Start Final Project
                                     <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">

@@ -75,10 +75,10 @@ Route::middleware('auth')->group(function () {
     Route::get("/allcourses", [CourseController::class, "allcourses"])->name("allcourses");
 
     // Route project final
-    Route::get('courses/{course}/start-final-project', [ProjetFinalController::class, 'start'])->name('final-project.start');
+    // Route::get('courses/{course}/start-final-project', [ProjetFinalController::class, 'start'])->name('final-project.start');
     Route::post('/projetfinal/{finalProject}/submit', [ProjetFinalController::class, 'submit'])->name('projetfinal.submit');
-    Route::get('/final-project/{finalProject}/passed-users', [ProjetFinalController::class, 'passedUsers'])
-    ->name('final-project.passed-users');
+    Route::get('courses/start-final-project/{course}', [ProjetFinalController::class, 'start'])->name('finalproject.start');
+
 
    
 });

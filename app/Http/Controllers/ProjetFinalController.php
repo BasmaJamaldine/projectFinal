@@ -13,9 +13,9 @@ class ProjetFinalController extends Controller
 
 
 
-    public function start(ProjetFinal $course)
+    public function start(ProjetFinal $coursee)
     {
-
+        
         $finalProject = ProjetFinal::firstOrFail();
 
         $questions = QuesProjetF::where('projet_final_id', $finalProject->id)->get();
@@ -64,16 +64,7 @@ class ProjetFinalController extends Controller
             // 'course' => $course,
         ]);
     }
-    public function passedUsers(ProjetFinal $finalProject)
-    {
-        $passedUsers = StudentProjetF::where('final_project_id', $finalProject->id)->where('passed', true)->with('user')
-            ->orderBy('updated_at', 'desc')->get();
-
-        return view('joindCourses', [
-            'finalProject' => $finalProject,
-            'passedUsers' => $passedUsers,
-        ]);
-    }
+  
     
     
 }
